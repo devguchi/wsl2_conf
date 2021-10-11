@@ -1,0 +1,16 @@
+# Pで現在のブランチへpush
+bind generic P ?@!git push origin %(repo:head)
+
+# status画面
+## 特定ファイルだけ元に戻す
+bind status B ?@git checkout %(file)
+
+## 全てをadd
+bind status A @git add -A
+
+## 全てのaddの取り消し
+bind status R @git reset HEAD
+
+## Dでstatus viewのuntracked fileを削除できるようにする
+bind status D ?@rm %(file)
+
