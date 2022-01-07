@@ -1,0 +1,20 @@
+[user]
+	email = web3ten0@gmail.com
+	name = web3ten0
+[alias]
+	cl = clone
+	i = init
+	conl = config -l
+	b = branch
+	bd =  branch -d
+	a = add
+	aa = add -A
+	so = push origin
+	lo = pull origin
+	lod = pull origin develop
+	cam = commit -am
+	m = merge
+	ch = checkout
+	s = status
+[core]
+	editor = vim
