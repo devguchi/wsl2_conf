@@ -10,9 +10,6 @@ setopt share_history # 異なるウィンドウでコマンドヒストリを共
 setopt hist_no_store # historyコマンドは履歴に登録しない
 setopt hist_reduce_blanks # 余分な空白は詰めて記録
 
-# bat
-export BAT_THEME="TwoDark"
-
 # Alias
 alias h="cd ~"
 alias e="exit"
@@ -46,18 +43,13 @@ if (which zprof > /dev/null 2>&1) ;then
     zprof > ~/zproflog
 fi
 
-export PATH="/home/dev/.local/share/solana/install/active_release/bin:$PATH"
-. "$HOME/.cargo/env"
-eval "$(starship init zsh)"
-
-# wabt(wasm tool)
-export PATH="/home/dev/pj/wabt/build:$PATH"
-
-# golang
-export PATH=$PATH:/usr/local/go/bin
+# bat
+export BAT_THEME="TwoDark"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dev/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dev/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(starship init zsh)"
