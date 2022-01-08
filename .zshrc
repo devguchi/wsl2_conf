@@ -21,6 +21,7 @@ alias la='exa -aa'
 alias ll='exa -l'
 alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache"'
 alias lta='exa -T -a -I "node_modules|.git|.cache" --color=always | less -'
+alias cat='bat'
 alias dco='docker-compose'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
@@ -44,7 +45,7 @@ if (which zprof > /dev/null 2>&1) ;then
 fi
 
 # bat
-export BAT_THEME="TwoDark"
+export BAT_THEME="GitHub"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dev/google-cloud-sdk/path.zsh.inc'; fi

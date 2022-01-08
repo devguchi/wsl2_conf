@@ -105,9 +105,9 @@ set background=dark
 set termguicolors
 " colorscheme badwolf
 " colorscheme spacecamp
-" colorscheme simpleblack
+colorscheme simpleblack
 " colorscheme gruvbox-material
-colorscheme PaperColor
+" colorscheme PaperColor
 
 """""""""""""""""""
 " Python setting
