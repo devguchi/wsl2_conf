@@ -21,7 +21,6 @@ alias la='exa -aa'
 alias ll='exa -l'
 alias lt='exa -T -L 3 -a -I "node_modules|.git|.cache"'
 alias lta='exa -T -a -I "node_modules|.git|.cache" --color=always | less -'
-alias cat='bat'
 alias dco='docker-compose'
 alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
@@ -31,10 +30,12 @@ alias pj='cd ~/pj'
 alias atcoder='cd ~/pj/atcoder'
 alias k='kubectl'
 alias cr='cargo run'
+alias bcr='RUST_BACKTRACE=1 cargo run'
 alias crb='cargo run --bin'
 alias cf='cargo fmt'
 alias ct='cargo test -- --nocapture'
 alias catt='cargo atcoder test'
+alias bcatt='RUST_BACKTRACE=1 cargo atcoder test'
 alias cats='cargo atcoder submit'
 alias catn='cargo atcoder new'
 alias snippet='cargo snippet -t vscode > /mnt/c/Users/dev/AppData/Roaming/Code/User/snippets/rust.json'
@@ -45,12 +46,14 @@ if (which zprof > /dev/null 2>&1) ;then
 fi
 
 # bat
-export BAT_THEME="GitHub"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dev/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dev/google-cloud-sdk/completion.zsh.inc'; fi
+export BAT_THEME="Monokai Extend"
 
 eval "$(starship init zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"

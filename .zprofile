@@ -1,12 +1,12 @@
 . "$HOME/.cargo/env"
 
-export PATH="/home/dev/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
 # wabt(wasm tool)
-export PATH="/home/dev/pj/wabt/build:$PATH"
+export PATH="$HOME/pj/wabt/build:$PATH"
 
 # golang
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 
 # n, node, npm
 export N_PREFIX=$HOME/n
