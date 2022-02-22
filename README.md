@@ -86,7 +86,7 @@ PS> .\Arch.exe config --default-user [Username]
 > ln -s wsl2_conf/.vimrc .
 > ln -s wsl2_conf/.zprofile .
 > mkdir ~/.config/nvim
-> ln -s wsl2_conf/.init.vim ~/.config/nvim/.
+> ln -s wsl2_conf/init.vim ~/.config/nvim/.
 > sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 > nvim
