@@ -1,20 +1,88 @@
 [user]
-	email = web3ten0@gmail.com
 	name = web3ten0
+	email = web3ten0@gmail.com
 [alias]
 	cl = clone
 	i = init
+	con = config
 	conl = config -l
+	cong = config --global
 	b = branch
-	bd =  branch -d
+	bd = branch -d
 	a = add
 	aa = add -A
-	so = push origin
+	lom = pull origin master
 	lo = pull origin
 	lod = pull origin develop
+	lg = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
 	cam = commit -am
+	ame = commit --amend -m
+	reb = rebase -i
+	d = diff
 	m = merge
+	s = status --short --branch
+	st = status --short --branch
 	ch = checkout
-	s = status
+	rshh = reset --hard HEAD^
+	rsh  = reset --hard
+	rv  = revert
 [core]
-	editor = vim
+	autocrlf = input
+	checkStat = minimal
+  editor = nvim
+  pager = delta
+[grep]
+	lineNumber = true
+[interctive]
+  diffFilter = delta --color-only
+[add.interactive]
+    useBuiltin = false # required for git 2.37.0
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[credential]
+	helper = cache --timeout=31536000\n
+
+[delta "unobtrusive-line-numbers"]
+    line-numbers = true
+    line-numbers-minus-style = "#444444"
+    line-numbers-zero-style = "#444444"
+    line-numbers-plus-style = "#444444"
+    line-numbers-left-format = "{nm:>4}┊"
+    line-numbers-right-format = "{np:>4}│"
+    line-numbers-left-style = blue
+    line-numbers-right-style = blue
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = yellow box
+
+[delta]
+    ; features = side-by-side line-numbers decorations
+    features = line-numbers decorations
+    syntax-theme = Dracula
+    plus-style = syntax "#003800"
+    minus-style = syntax "#3f0001"
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = cyan box ul
+
+[delta "line-numbers"]
+    line-numbers-left-style = cyan
+    line-numbers-right-style = cyan
+    line-numbers-minus-style = 124
+    line-numbers-plus-style = 28
+

@@ -1,16 +1,70 @@
-# Pで現在のブランチへpush
-bind generic P ?@!git push origin %(repo:head)
+#--------------------------------------------------------------
+# tig settings                                          
+#--------------------------------------------------------------
+set tab-size = 2
+set ignore-case = true
+set split-view-width = 80%
+set split-view-height = 80%
+set diff-options = -m --first-parent
+set mouse = true
+set editor-line-number = yes
+color cursor black white normal
 
-# status画面
-## 特定ファイルだけ元に戻す
+set main-view  = date:relative-compact,local=yes id:yes  author commit-title:graph=v2,refs=yes,overflow=false
+set blame-view  = date:relative-compact,local=yes id:yes author line-number:yes,interval=1 text
+set pager-view  = line-number:yes,interval=1 text
+set stage-view  = line-number:yes,interval=1 text
+set log-view    = line-number:yes,interval=1 text
+set blob-view   = line-number:yes,interval=1 text
+set diff-view   = line-number:yes,interval=1 text:yes,commit-title-overflow=no
+set diff-highlight = false
+
+#--------------------------------------------------------------
+# reload
+#--------------------------------------------------------------
+# set refresh-mode = auto
+#set refresh-mode = after-command
+#set refresh-mode = periodic
+set refresh-interval = 1
+
+#--------------------------------------------------------------
+# key bind                                              
+#--------------------------------------------------------------
+# リポジトリのGitHubを表示
+bind generic G @hub browse
+
+# 現在のブランチへpush
+bind main P ?!git push origin %(repo:head)
+# 選択中のコミットをgithubで開く(main)
+bind main G @hub browse -- commit/%(commit)
+# 選択中のコミットをgithubで開く(diff)
+bind diff G @hub browse -- commit/%(commit)
+
+# ブランチ削除 
+bind refs D ?@git branch -d %(branch)
+# fetch -a
+bind refs F ?@git fetch -a 
+# 現在のブランチをpull
+bind refs L ?!git pull %(remote)
+# 現在のブランチに選択中のブランチをマージする
+bind refs M ?!git merge %(branch)
+# 現在のブランチを選択中のブランチ上にリベースする
+bind refs R ?!git rebase %(branch) 
+# 現在のブランチから新しいブランチを作成
+bind refs N ?@git branch %(prompt)
+# 選択したbranchのcompare画面
+bind refs G !hub compare %(branch)
+
+# 特定ファイルだけ元に戻す
 bind status B ?@git checkout %(file)
-
-## 全てをadd
+# 全てをadd
 bind status A @git add -A
-
-## 全てのaddの取り消し
+# 全てのaddの取り消し
 bind status R @git reset HEAD
-
-## Dでstatus viewのuntracked fileを削除できるようにする
+# untracked fileを削除できるようにする
 bind status D ?@rm %(file)
+# commti --ammend
+bind status + ?!git commit --amend
+# stash
+bind status S ?@git stash save -u %(prompt)
 

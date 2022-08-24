@@ -39,6 +39,7 @@ alias bcatt='RUST_BACKTRACE=1 cargo atcoder test'
 alias cats='cargo atcoder submit'
 alias catn='cargo atcoder new'
 alias snippet='cargo snippet -t vscode > /mnt/c/Users/dev/AppData/Roaming/Code/User/snippets/rust.json'
+alias cm='compiledb make'
 
 # out profile
 if (which zprof > /dev/null 2>&1) ;then
