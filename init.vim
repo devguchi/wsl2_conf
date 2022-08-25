@@ -133,8 +133,8 @@ set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
 
 " Popup
-hi Pmenu ctermbg=cyan ctermfg=black guibg=#0099ff guifg=#000000
-hi PmenuSel ctermbg=gray ctermfg=white guibg=#b7c7b7 guifg=#000000
+hi Pmenu guibg=#223366 guifg=#ffffff
+hi PmenuSel guibg=#b7c7b7
 hi PmenuSbar guibg=#bcbcbc
 hi PmenuThumb guibg=#585858
 
@@ -265,6 +265,15 @@ nnoremap [go] <Nop>
 nnoremap [go]r :GoRun
 nnoremap [go]e :GoErrCheck<CR>
 nnoremap [go]d :GoDef<CR>
+
+""""""""""""""""""""""""""""""
+" C#のFormat
+""""""""""""""""""""""""""""""
+" command! -nargs=0 CSFormat :call system('dotnet-format -f --include '.expand('%'))
+augroup csharp
+  autocmd!
+  autocmd BufWritePost *.cs : !dotnet-format -f --include %
+augroup end
 
 """"""""""""""""""""""""""""""
 " grep => rg
@@ -438,19 +447,4 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
-
-
-" 以下よく分かっていない
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
 
