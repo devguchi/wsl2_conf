@@ -123,7 +123,24 @@ set cursorline
 colorscheme PaperColor
 " colorscheme simpleblack
 
-highlight CursorLine guibg=#103259
+" Cursor
+hi CursorLine guibg=#103259
+hi Cursor guifg=black guibg=#43658c
+hi iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
+" Popup
+hi Pmenu ctermbg=cyan ctermfg=black guibg=#0099ff guifg=#000000
+hi PmenuSel ctermbg=gray ctermfg=white guibg=#b7c7b7 guifg=#000000
+hi PmenuSbar guibg=#bcbcbc
+hi PmenuThumb guibg=#585858
+
+" Coc 補完
+hi CocSearch guifg=#ff9900 
+hi CocMenuSel guibg=#115566
 
 if !has('gui_running')
   augroup opacity
