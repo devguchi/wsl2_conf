@@ -18,3 +18,6 @@ export DISPLAY=$(route.exe print | grep 0.0.0.0 | head -1 | awk '{print $4}'):0.
 
 # python(pip)
 export PATH="$HOME/.local/bin:$PATH"
+
+# Add .NET Core SDK tools
+export PATH="$PATH:$HOME/.dotnet/tools"
