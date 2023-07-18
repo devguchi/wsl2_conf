@@ -40,6 +40,7 @@ alias cats='cargo atcoder submit'
 alias catn='cargo atcoder new'
 alias snippet='cargo snippet -t vscode > /mnt/c/Users/dev/AppData/Roaming/Code/User/snippets/rust.json'
 alias cm='compiledb make'
+alias unity='cd /mnt/c/Users/dev/pj/unity'
 
 # out profile
 if (which zprof > /dev/null 2>&1) ;then
@@ -49,8 +50,6 @@ fi
 # bat
 export BAT_THEME="Monokai Extend"
 
-eval "$(starship init zsh)"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
@@ -58,3 +57,13 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/dev/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

@@ -269,11 +269,11 @@ nnoremap [go]d :GoDef<CR>
 """"""""""""""""""""""""""""""
 " C#のFormat
 """"""""""""""""""""""""""""""
-" command! -nargs=0 CSFormat :call system('dotnet-format -f --include '.expand('%'))
-augroup csharp
-  autocmd!
-  autocmd BufWritePost *.cs : !dotnet-format -f --include %
-augroup end
+command! -nargs=0 CSFormat :call system('dotnet-format -f --include '.expand('%'))
+" augroup csharp
+"   autocmd!
+"   autocmd BufWritePost *.cs : !dotnet-format -f --include %
+" augroup end
 
 """"""""""""""""""""""""""""""
 " grep => rg

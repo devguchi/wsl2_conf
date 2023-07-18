@@ -1,6 +1,7 @@
 [user]
-	name = web3ten0
+	name = net3i
 	email = web3ten0@gmail.com
+	signingkey = id_rsa.pub
 [alias]
 	cl = clone
 	i = init
@@ -86,3 +87,7 @@
     line-numbers-minus-style = 124
     line-numbers-plus-style = 28
 
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
