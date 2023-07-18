@@ -1,7 +1,7 @@
 [user]
 	name = net3i
 	email = web3ten0@gmail.com
-	signingkey = id_rsa.pub
+	signingkey = ~/.ssh/id_rsa.pub
 [alias]
 	cl = clone
 	i = init
